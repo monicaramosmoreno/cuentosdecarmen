@@ -65,8 +65,8 @@
       </div>
 
       <div class="hero-image-card">
-        <img id="heroImg" src="images/hero-carmen.jpg" alt="Niña animada bailando entre notas musicales" />
-        <div id="fallback" class="fallback">No se encuentra la imagen. Debe estar en <strong>images/hero-carmen.jpg</strong></div>
+        <img id="heroImg" src="hero-carmen.jpg" alt="Niña animada bailando entre notas musicales" />
+        <div id="fallback" class="fallback">No se encuentra la imagen. Debe estar en <strong>hero-carmen.jpg</strong></div>
       </div>
     </div>
   </main>
@@ -119,7 +119,7 @@
   <script>
     const img = document.getElementById('heroImg');
     const fallback = document.getElementById('fallback');
-    const posibles = ['images/hero-carmen.jpg','images/hero-carmen.jpeg','images/hero-carmen.png','images/hero-carmen.webp','images/hero-carmen'];
+    const posibles = ['hero-carmen.jpg','hero-carmen.jpeg','hero-carmen.png','hero-carmen.webp','hero-carmen'];
     let i = 0;
     img.onerror = function(){
       i++;
