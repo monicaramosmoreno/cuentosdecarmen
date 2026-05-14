@@ -236,13 +236,13 @@ footer{
   
 .song-image{
   width:100%;
-  max-width:100%;
+  max-width:360px;
   height:220px;
   object-fit:cover;
   object-position:center;
   border-radius:18px;
   display:block;
-  margin-bottom:15px;
+  margin:0 auto 15px auto;
 }
 
 .card{
