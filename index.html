@@ -1,510 +1,237 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Cuentos y Canciones Carmen</title>
+<title>Cuentos y Canciones Carmen</title>
 
-  <meta name="description" content="Ideas personalizadas para convertir recuerdos bonitos en cuentos, canciones y detalles únicos." />
-  
-  <style>
+<style>
 
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family:Arial, Helvetica, sans-serif;
-      background:#fff8f5;
-      color:#4a2f2a;
-      line-height:1.6;
-      overflow-x:hidden;
-    }
-
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
-
-    .navbar{
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      z-index:20;
-      background:rgba(255,248,245,.88);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(255,198,211,.45);
-    }
-
-    .nav-inner{
-      max-width:1180px;
-      margin:auto;
-      padding:14px 22px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-    }
-
-    .logo{
-      font-weight:800;
-      color:#d95b82;
-      font-size:1.1rem;
-    }
-
-    .menu{
-      display:flex;
-      gap:18px;
-      font-size:.95rem;
-      color:#6b4b45;
-    }
-
-    .menu a:hover{
-      color:#d95b82;
-    }
-
-    .hero{
-      min-height:100vh;
-      position:relative;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:92px 20px 44px;
-      overflow:hidden;
-      background:linear-gradient(135deg,#fff3f5,#fff9ef);
-    }
-
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-      radial-gradient(circle at 20% 20%,rgba(255,213,225,.65),transparent 30%),
-      radial-gradient(circle at 80% 10%,rgba(255,230,171,.45),transparent 32%),
-      radial-gradient(circle at 50% 90%,rgba(255,195,214,.38),transparent 35%);
-      z-index:0;
-    }
-
-    .hero-wrap{
-      position:relative;
-      z-index:2;
-      width:min(1180px,100%);
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      align-items:center;
-      gap:34px;
-    }
-
-    .hero-text{
-      background:rgba(255,255,255,.72);
-      border:1px solid rgba(255,199,214,.75);
-      box-shadow:0 24px 60px rgba(165,85,98,.16);
-      border-radius:32px;
-      padding:38px;
-      backdrop-filter:blur(10px);
-    }
-
-    .eyebrow{
-      display:inline-block;
-      background:#ffe2eb;
-      color:#c64a74;
-      padding:8px 14px;
-      border-radius:999px;
-      font-weight:700;
-      font-size:.86rem;
-      margin-bottom:16px;
-    }
-
-    h1{
-      font-size:clamp(2.3rem,6vw,5.2rem);
-      line-height:.98;
-      color:#c94c78;
-      margin-bottom:18px;
-      letter-spacing:-1.5px;
-    }
-
-    .subtitle{
-      font-size:clamp(1.05rem,2vw,1.35rem);
-      color:#6d4d48;
-      max-width:560px;
-      margin-bottom:24px;
-    }
-
-    .buttons{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:13px 20px;
-      border-radius:999px;
-      font-weight:800;
-      transition:.25s ease;
-      box-shadow:0 10px 24px rgba(194,83,117,.16);
-    }
-
-    .btn.primary{
-      background:#d95b82;
-      color:white;
-    }
-
-    .btn.secondary{
-      background:white;
-      color:#d95b82;
-      border:1px solid #ffd0dd;
-    }
-
-    .btn:hover{
-      transform:translateY(-2px);
-    }
-
-    .hero-image-card{
-      border-radius:38px;
-      overflow:hidden;
-      box-shadow:0 30px 80px rgba(137,74,82,.28);
-      border:10px solid rgba(255,255,255,.85);
-      background:white;
-    }
-
-    .hero-image-card img{
-      display:block;
-      width:100%;
-      height:100%;
-      min-height:360px;
-      max-height:720px;
-      object-fit:cover;
-      object-position:center;
-    }
-
-    section{
-      padding:78px 22px;
-    }
-
-    .container{
-      max-width:1080px;
-      margin:auto;
-    }
-
-    .section-title{
-      text-align:center;
-      font-size:clamp(2rem,4vw,3.2rem);
-      color:#c94c78;
-      margin-bottom:16px;
-    }
-
-    .section-text{
-      text-align:center;
-      max-width:760px;
-      margin:0 auto 36px;
-      color:#6d4d48;
-      font-size:1.08rem;
-    }
-
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:24px;
-      align-items:stretch;
-    }
-
-    .card{
-      background:white;
-      border-radius:26px;
-      padding:26px;
-      box-shadow:0 18px 45px rgba(180,99,111,.12);
-      border:1px solid #ffe0e8;
-      text-align:center;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-    }
-
-    .card h3{
-      color:#c94c78;
-      margin-bottom:12px;
-    }
-
-    .card p{
-      color:#6d4d48;
-      min-height:70px;
-    }
-
-    .idea-image{
-      width:100%;
-      max-width:330px;
-      height:410px;
-      object-fit:cover;
-      border-radius:18px;
-      display:block;
-      margin:0 auto 20px;
-    }
-
-    .btn-idea{
-      display:inline-block;
-      margin-top:auto;
-      padding:12px 22px;
-      background:#d95b82;
-      color:white;
-      border-radius:999px;
-      font-weight:800;
-      transition:.25s ease;
-    }
-
-    .btn-idea:hover{
-      background:#c94c78;
-      transform:translateY(-2px);
-    }
-
-    .contact{
-      background:#fff0f5;
-      text-align:center;
-    }
-
-    .mail{
-      display:inline-flex;
-      margin-top:12px;
-      background:#d95b82;
-      color:white;
-      padding:14px 24px;
-      border-radius:999px;
-      font-weight:800;
-    }
-
-    footer{
-      text-align:center;
-      padding:28px;
-      color:#84615a;
-      background:#fff8f5;
-    }
-
-    @media(max-width:850px){
-
-      .menu{
-        display:none;
-      }
-
-      .hero{
-        padding-top:86px;
-      }
-
-      .hero-wrap{
-        grid-template-columns:1fr;
-        gap:24px;
-      }
-
-      .hero-text{
-        padding:28px;
-        border-radius:26px;
-        text-align:center;
-        order:2;
-      }
-
-      .buttons{
-        justify-content:center;
-      }
-
-      .hero-image-card{
-        order:1;
-        border-width:7px;
-        border-radius:28px;
-      }
-
-      .hero-image-card img{
-        min-height:300px;
-        max-height:480px;
-      }
-
-      .cards{
-        grid-template-columns:1fr;
-      }
-
-    }
-.postal-image{
-  width:100%;
-  max-width:380px;
-  height:auto;
-  display:block;
-  margin:18px auto 0;
-  border-radius:20px;
-  box-shadow:0 10px 25px rgba(0,0,0,.12);
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
-  </style>
+
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:#fff8f5;
+  color:#5b3a35;
+  line-height:1.6;
+}
+
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
+
+.hero{
+  text-align:center;
+  padding:70px 20px 40px;
+}
+
+.hero h1{
+  font-size:3rem;
+  color:#d45087;
+  margin-bottom:20px;
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  font-size:1.1rem;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+  padding:50px 0 80px;
+}
+
+.card{
+  background:white;
+  border-radius:30px;
+  padding:30px;
+  text-align:center;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+  border:1px solid #ffd7e4;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.card img{
+  width:100%;
+  height:460px;
+  object-fit:cover;
+  border-radius:22px;
+  margin-bottom:25px;
+}
+
+.card h3{
+  color:#d45087;
+  font-size:2rem;
+  margin-bottom:18px;
+}
+
+.card p{
+  font-size:1.15rem;
+  margin-bottom:30px;
+}
+
+.btn{
+  display:inline-block;
+  background:#d45087;
+  color:white;
+  padding:16px 32px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  opacity:.9;
+}
+
+/* TARJETA POSTAL */
+
+.postal-card{
+  justify-content:flex-start;
+}
+
+.postal-card .postal-image{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  margin:0 0 24px;
+  border-radius:18px;
+  box-shadow:0 12px 28px rgba(0,0,0,.12);
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  color:#8d6b66;
+}
+
+@media(max-width:768px){
+
+  .hero h1{
+    font-size:2.2rem;
+  }
+
+  .card img{
+    height:380px;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
 
-  <header class="navbar">
-    <div class="nav-inner">
-      <a class="logo" href="#inicio">Cuentos y Canciones Carmen</a>
+<section class="hero">
 
-      <nav class="menu">
-        <a href="#ideas">Ideas</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-    </div>
-  </header>
+  <div class="container">
 
-  <main id="inicio" class="hero">
-
-    <div class="hero-wrap">
-
-      <div class="hero-text">
-
-        <span class="eyebrow">
-          Recuerdos convertidos en magia
-        </span>
-
-        <h1>
-          Cuentos y Canciones Carmen
-        </h1>
-
-        <p class="subtitle">
-          Creamos ideas personalizadas para transformar nombres, recuerdos y momentos especiales en cuentos, canciones y detalles que se guardan para siempre.
-        </p>
-
-        <div class="buttons">
-          <a class="btn primary" href="#contacto">
-            Pedir información
-          </a>
-
-          <a class="btn secondary" href="#ideas">
-            Ver ideas
-          </a>
-        </div>
-
-      </div>
-
-      <div class="hero-image-card">
-        <img src="hero-carmen.jpg" alt="Niña animada en un mundo mágico" />
-      </div>
-
-    </div>
-
-  </main>
-
-  <section id="ideas">
-
-    <div class="container">
-
-      <h2 class="section-title">
-        Ideas que emocionan
-      </h2>
-
-      <p class="section-text">
-        Pequeños proyectos personalizados para regalar, recordar y guardar momentos bonitos.
-      </p>
-
-      <div class="cards">
-
-        <article class="card">
-
-          <img
-            src="portada-luna-carmen.png"
-            alt="La Luna que cuidaba de Carmen"
-            class="idea-image">
-
-          <h3>
-            La Luna que cuidaba de Carmen
-          </h3>
-
-          <p>
-            Un cuento para que tu peque duerma feliz.
-          </p>
-
-          <a href="luna-carmen.html"
-             target="_blank"
-             class="btn-idea">
-            Leer cuento
-          </a>
-
-        </article>
-
-        <article class="card">
-
-          <img
-            src="luna-carmen.png"
-            alt="La Luna baila con Carmen"
-            class="idea-image">
-
-          <h3>
-            La Luna baila con Carmen
-          </h3>
-
-          <p>
-            Una nana personalizada única.
-          </p>
-
-          <a href="la-luna-baila-con-carmen.mp3"
-             target="_blank"
-             class="btn-idea">
-            Escuchar canción
-          </a>
-
-        </article>
-
-        <article class="card">
-
-          <h3>
-            Postal personalizada
-          </h3>
+    <h1>
+      Cuentos y Canciones Carmen
+    </h1>
 
     <p>
-  Una imagen especial con nombre, frase bonita y diseño emocional para regalar o compartir.
-  </p>
+      Porque hay recuerdos que merecen ser contados.
+      Creamos cuentos, canciones y postales personalizadas llenas de emoción y magia.
+    </p>
 
-    <img src="postal-nacimiento-carmen.png"
-     alt="Postal personalizada de nacimiento"
-     class="postal-image">
+  </div>
 
-          <a href="#contacto"
-             class="btn-idea">
-            Próximamente
-          </a>
+</section>
 
-        </article>
+<section class="container">
 
-      </div>
+  <div class="cards">
 
-    </div>
+    <!-- CUENTO -->
 
-  </section>
+    <article class="card">
 
-  <section id="contacto" class="contact">
+      <img src="cuento-carmen.png"
+           alt="La Luna que cuidaba de Carmen">
 
-    <div class="container">
+      <h3>
+        La Luna que cuidaba de Carmen
+      </h3>
 
-      <h2 class="section-title">
-        ¿Creamos algo bonito?
-      </h2>
-
-      <p class="section-text">
-        Cuéntame tu idea y preparo una propuesta personalizada.
+      <p>
+        Un cuento para que tu peque duerma feliz.
       </p>
 
-      <a class="mail"
-         href="mailto:carmenycuentos@gmail.com">
-        Enviar Mail
+      <a href="#" class="btn">
+        Leer cuento
       </a>
 
-    </div>
+    </article>
 
-  </section>
+    <!-- CANCIÓN -->
 
-  <footer>
-    © Cuentos y Canciones Carmen
-  </footer>
+    <article class="card">
+
+      <img src="luna-carmen.png"
+           alt="La Luna baila con Carmen">
+
+      <h3>
+        La Luna baila con Carmen
+      </h3>
+
+      <p>
+        Una nana personalizada única.
+      </p>
+
+      <a href="#" class="btn">
+        Escuchar canción
+      </a>
+
+    </article>
+
+    <!-- POSTAL -->
+
+    <article class="card postal-card">
+
+      <img src="postal-nacimiento-carmen.png"
+           alt="Postal personalizada de nacimiento"
+           class="postal-image">
+
+      <h3>
+        Postal personalizada
+      </h3>
+
+      <p>
+        Diseñamos una postal única con nombre, fecha y una frase especial.
+        Ideal para nacimientos, cumpleaños o recuerdos bonitos.
+      </p>
+
+      <a href="mailto:carmenycuentos@gmail.com?subject=Quiero una postal personalizada"
+         class="btn">
+        Pedir postal
+      </a>
+
+    </article>
+
+  </div>
+
+</section>
+
+<footer>
+  © 2026 · Cuentos y Canciones Carmen
+</footer>
 
 </body>
 </html>
