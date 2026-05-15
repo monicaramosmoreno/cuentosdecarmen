@@ -4,45 +4,56 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cuentos y Canciones Carmen</title>
-  <meta name="description" content="Cuentos y canciones personalizados para guardar recuerdos bonitos." />
+  <meta name="description" content="Ideas personalizadas para convertir recuerdos bonitos en cuentos, canciones y detalles únicos." />
+
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{font-family:Arial, Helvetica, sans-serif;background:#fff8f5;color:#4a2f2a;line-height:1.6;overflow-x:hidden}
     a{text-decoration:none;color:inherit}
+
     .navbar{position:fixed;top:0;left:0;width:100%;z-index:20;background:rgba(255,248,245,.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,198,211,.45)}
     .nav-inner{max-width:1180px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .logo{font-weight:800;color:#d95b82;font-size:1.1rem;letter-spacing:.2px}
+    .logo{font-weight:800;color:#d95b82;font-size:1.1rem}
     .menu{display:flex;gap:18px;font-size:.95rem;color:#6b4b45}
     .menu a:hover{color:#d95b82}
-    .hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;padding:92px 20px 44px;isolation:isolate;overflow:hidden;background:linear-gradient(135deg,#fff3f5,#fff9ef)}
-    .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(255,213,225,.65),transparent 30%),radial-gradient(circle at 80% 10%,rgba(255,230,171,.45),transparent 32%),radial-gradient(circle at 50% 90%,rgba(255,195,214,.38),transparent 35%);z-index:-3}
-    .hero-wrap{width:min(1180px,100%);display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:34px}
-    .hero-text{position:relative;z-index:3;background:rgba(255,255,255,.70);border:1px solid rgba(255,199,214,.75);box-shadow:0 24px 60px rgba(165,85,98,.16);border-radius:32px;padding:38px;backdrop-filter:blur(10px)}
+
+    .hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;padding:92px 20px 44px;overflow:hidden;background:linear-gradient(135deg,#fff3f5,#fff9ef)}
+    .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(255,213,225,.65),transparent 30%),radial-gradient(circle at 80% 10%,rgba(255,230,171,.45),transparent 32%),radial-gradient(circle at 50% 90%,rgba(255,195,214,.38),transparent 35%);z-index:0}
+    .hero-wrap{position:relative;z-index:2;width:min(1180px,100%);display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:34px}
+    .hero-text{background:rgba(255,255,255,.72);border:1px solid rgba(255,199,214,.75);box-shadow:0 24px 60px rgba(165,85,98,.16);border-radius:32px;padding:38px;backdrop-filter:blur(10px)}
     .eyebrow{display:inline-block;background:#ffe2eb;color:#c64a74;padding:8px 14px;border-radius:999px;font-weight:700;font-size:.86rem;margin-bottom:16px}
     h1{font-size:clamp(2.3rem,6vw,5.2rem);line-height:.98;color:#c94c78;margin-bottom:18px;letter-spacing:-1.5px}
     .subtitle{font-size:clamp(1.05rem,2vw,1.35rem);color:#6d4d48;max-width:560px;margin-bottom:24px}
     .buttons{display:flex;flex-wrap:wrap;gap:12px}
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:999px;font-weight:800;transition:.25s ease;box-shadow:0 10px 24px rgba(194,83,117,.16)}
-    .btn.primary{background:#d95b82;color:white}.btn.secondary{background:white;color:#d95b82;border:1px solid #ffd0dd}.btn:hover{transform:translateY(-2px)}
-    .hero-image-card{position:relative;z-index:2;border-radius:38px;overflow:hidden;box-shadow:0 30px 80px rgba(137,74,82,.28);border:10px solid rgba(255,255,255,.85);background:white;min-height:360px}
-    .hero-image-card img{display:block;width:100%;height:100%;min-height:360px;max-height:720px;object-fit:cover;object-position:center}
-    .fallback{padding:40px;text-align:center;color:#9b5d69;background:#fff;display:none}
-    .note{position:absolute;z-index:1;font-size:clamp(2rem,4vw,4rem);opacity:.85;filter:drop-shadow(0 8px 12px rgba(195,76,120,.18));animation:float 5s ease-in-out infinite;pointer-events:none}
-    .note.n1{top:15%;left:7%;color:#ff6f9f;animation-delay:.1s}.note.n2{top:20%;right:9%;color:#67b7ff;animation-delay:.8s}.note.n3{bottom:18%;left:10%;color:#ffc75f;animation-delay:1.4s}.note.n4{bottom:23%;right:13%;color:#af7bff;animation-delay:2s}
-    .sparkle{position:absolute;width:8px;height:8px;border-radius:50%;background:white;box-shadow:0 0 18px 6px rgba(255,255,255,.75);animation:twinkle 2.6s ease-in-out infinite;z-index:1}.s1{top:30%;left:48%}.s2{top:66%;left:55%;animation-delay:.7s}.s3{top:42%;right:35%;animation-delay:1.2s}.s4{bottom:17%;right:42%;animation-delay:1.8s}
-    section{padding:78px 22px}.container{max-width:1080px;margin:auto}.section-title{text-align:center;font-size:clamp(2rem,4vw,3.2rem);color:#c94c78;margin-bottom:16px}.section-text{text-align:center;max-width:760px;margin:0 auto 36px;color:#6d4d48;font-size:1.08rem}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:white;border-radius:26px;padding:26px;box-shadow:0 18px 45px rgba(180,99,111,.12);border:1px solid #ffe0e8}.card h3{color:#c94c78;margin-bottom:8px}.contact{background:#fff0f5;text-align:center}.mail{display:inline-flex;margin-top:12px;background:#d95b82;color:white;padding:14px 24px;border-radius:999px;font-weight:800}footer{text-align:center;padding:28px;color:#84615a;background:#fff8f5}
+    .btn.primary{background:#d95b82;color:white}
+    .btn.secondary{background:white;color:#d95b82;border:1px solid #ffd0dd}
+    .btn:hover{transform:translateY(-2px)}
 
-    .cuento-image{
+    .hero-image-card{border-radius:38px;overflow:hidden;box-shadow:0 30px 80px rgba(137,74,82,.28);border:10px solid rgba(255,255,255,.85);background:white}
+    .hero-image-card img{display:block;width:100%;height:100%;min-height:360px;max-height:720px;object-fit:cover;object-position:center}
+
+    section{padding:78px 22px}
+    .container{max-width:1080px;margin:auto}
+    .section-title{text-align:center;font-size:clamp(2rem,4vw,3.2rem);color:#c94c78;margin-bottom:16px}
+    .section-text{text-align:center;max-width:760px;margin:0 auto 36px;color:#6d4d48;font-size:1.08rem}
+
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{background:white;border-radius:26px;padding:26px;box-shadow:0 18px 45px rgba(180,99,111,.12);border:1px solid #ffe0e8;text-align:center}
+    .card h3{color:#c94c78;margin-bottom:8px}
+    .card p{color:#6d4d48}
+
+    .idea-image{
       width:100%;
       max-width:440px;
       height:auto;
       border-radius:18px;
       display:block;
-      margin:0 auto 16px auto;
+      margin:0 auto 16px;
     }
 
-    .btn-cuento{
+    .btn-idea{
       display:inline-block;
       margin-top:14px;
       padding:12px 22px;
@@ -50,117 +61,111 @@
       color:white;
       border-radius:999px;
       font-weight:800;
-      box-shadow:0 10px 24px rgba(194,83,117,.16);
       transition:.25s ease;
     }
 
-    .btn-cuento:hover{
+    .btn-idea:hover{
       background:#c94c78;
       transform:translateY(-2px);
     }
 
-    .song-image{
-      width:100% !important;
-      max-width:440px !important;
-      height:auto !important;
-      object-fit:contain !important;
-      object-position:center !important;
-      border-radius:18px !important;
-      display:block !important;
-      margin:0 auto 15px auto !important;
+    audio{
+      width:100%;
+      margin-top:14px;
     }
 
-    @keyframes float{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-18px) rotate(7deg)}}
-    @keyframes twinkle{0%,100%{opacity:.15;transform:scale(.7)}50%{opacity:1;transform:scale(1.25)}}
-    @media(max-width:850px){.menu{display:none}.hero{padding-top:86px}.hero-wrap{grid-template-columns:1fr;gap:24px}.hero-text{padding:28px;border-radius:26px;text-align:center;order:2}.buttons{justify-content:center}.hero-image-card{order:1;border-width:7px;border-radius:28px;min-height:300px}.hero-image-card img{min-height:300px;max-height:480px}.cards{grid-template-columns:1fr}.note{opacity:.45}}
+    .contact{background:#fff0f5;text-align:center}
+    .mail{display:inline-flex;margin-top:12px;background:#d95b82;color:white;padding:14px 24px;border-radius:999px;font-weight:800}
+    footer{text-align:center;padding:28px;color:#84615a;background:#fff8f5}
+
+    @media(max-width:850px){
+      .menu{display:none}
+      .hero{padding-top:86px}
+      .hero-wrap{grid-template-columns:1fr;gap:24px}
+      .hero-text{padding:28px;border-radius:26px;text-align:center;order:2}
+      .buttons{justify-content:center}
+      .hero-image-card{order:1;border-width:7px;border-radius:28px}
+      .hero-image-card img{min-height:300px;max-height:480px}
+      .cards{grid-template-columns:1fr}
+    }
   </style>
 </head>
+
 <body>
+
   <header class="navbar">
     <div class="nav-inner">
       <a class="logo" href="#inicio">Cuentos y Canciones Carmen</a>
       <nav class="menu">
-        <a href="#cuentos">Cuentos</a>
-        <a href="#canciones">Canciones</a>
+        <a href="#ideas">Ideas</a>
         <a href="#contacto">Contacto</a>
       </nav>
     </div>
   </header>
 
   <main id="inicio" class="hero">
-    <span class="note n1">♪</span><span class="note n2">♫</span><span class="note n3">♬</span><span class="note n4">♪</span>
-    <span class="sparkle s1"></span><span class="sparkle s2"></span><span class="sparkle s3"></span><span class="sparkle s4"></span>
-
     <div class="hero-wrap">
       <div class="hero-text">
-        <span class="eyebrow">Historias con música y corazón</span>
+        <span class="eyebrow">Recuerdos convertidos en magia</span>
         <h1>Cuentos y Canciones Carmen</h1>
-        <p class="subtitle">Creamos cuentos y canciones personalizados para convertir recuerdos, nombres y momentos especiales en pequeñas historias que se leen, se cantan y se guardan.</p>
+        <p class="subtitle">Creamos ideas personalizadas para transformar nombres, recuerdos y momentos especiales en cuentos, canciones y detalles que se guardan para siempre.</p>
         <div class="buttons">
           <a class="btn primary" href="#contacto">Pedir información</a>
-          <a class="btn secondary" href="#cuentos">Ver ideas</a>
+          <a class="btn secondary" href="#ideas">Ver ideas</a>
         </div>
       </div>
 
       <div class="hero-image-card">
-        <img id="heroImg" src="hero-carmen.jpg" alt="Niña animada bailando entre notas musicales" />
-        <div id="fallback" class="fallback">No se encuentra la imagen. Debe estar en <strong>hero-carmen.jpg</strong></div>
+        <img src="hero-carmen.jpg" alt="Niña animada en un mundo mágico" />
       </div>
     </div>
   </main>
 
-  <section id="cuentos">
+  <section id="ideas">
     <div class="container">
-      <h2 class="section-title">Cuentos personalizados</h2>
-      <p class="section-text">Historias tiernas para regalar, recordar o acompañar momentos especiales.</p>
+      <h2 class="section-title">Ideas que emocionan</h2>
+      <p class="section-text">Pequeños proyectos personalizados para regalar, recordar y guardar momentos bonitos.</p>
+
       <div class="cards">
 
         <article class="card">
           <img src="portada-luna-carmen.png"
                alt="La Luna que cuidaba de Carmen"
-               class="cuento-image">
+               class="idea-image">
 
           <h3>La Luna que cuidaba de Carmen</h3>
           <p>Un cuento suave para dormir bajo la luz de la luna.</p>
 
           <a href="luna-carmen.html"
              target="_blank"
-             class="btn-cuento">
+             class="btn-idea">
             Leer cuento
           </a>
         </article>
 
         <article class="card">
-          <h3>Para cumpleaños</h3>
-          <p>Un cuento donde el protagonista vive una aventura mágica en su día especial.</p>
-        </article>
-
-        <article class="card">
-          <h3>Para bebés</h3>
-          <p>Textos sencillos, suaves y bonitos para leer antes de dormir.</p>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="canciones">
-    <div class="container">
-      <h2 class="section-title">Canciones con nombre propio</h2>
-      <p class="section-text">Pequeñas letras llenas de cariño para cantar, bailar y emocionar.</p>
-      <div class="cards">
-        <article class="card"><h3>Canción de bienvenida</h3><p>Una canción especial para celebrar una llegada, un nacimiento o un recuerdo bonito.</p></article>
-        <article class="card"><h3>Canción de cumpleaños</h3><p>Una letra alegre y personalizada para hacer único cada cumpleaños.</p></article>
-        <article class="card">
           <img src="luna-carmen.png"
-               alt="La Luna Baila con Carmen"
-               class="song-image">
+               alt="La Luna baila con Carmen"
+               class="idea-image">
+
+          <h3>La Luna baila con Carmen</h3>
+          <p>Una canción dulce y personalizada para cantar, bailar y emocionar.</p>
 
           <audio controls>
             <source src="la-luna-baila-con-carmen.mp3" type="audio/mpeg">
             Tu navegador no soporta audio.
           </audio>
         </article>
+
+        <article class="card">
+          <h3>Postal personalizada</h3>
+          <p>Una imagen especial con nombre, frase bonita y diseño emocional para regalar o compartir.</p>
+
+          <a href="#contacto" class="btn-idea">
+            Próximamente
+          </a>
+        </article>
+
       </div>
     </div>
   </section>
@@ -175,16 +180,5 @@
 
   <footer>© Cuentos y Canciones Carmen</footer>
 
-  <script>
-    const img = document.getElementById('heroImg');
-    const fallback = document.getElementById('fallback');
-    const posibles = ['images/hero-carmen.jpg','hero-carmen.jpeg','hero-carmen.png','hero-carmen.webp','hero-carmen'];
-    let i = 0;
-    img.onerror = function(){
-      i++;
-      if(i < posibles.length){ img.src = posibles[i]; }
-      else { img.style.display = 'none'; fallback.style.display = 'block'; }
-    };
-  </script>
 </body>
 </html>
