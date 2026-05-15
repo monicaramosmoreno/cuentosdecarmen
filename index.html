@@ -32,19 +32,47 @@
     .note.n1{top:15%;left:7%;color:#ff6f9f;animation-delay:.1s}.note.n2{top:20%;right:9%;color:#67b7ff;animation-delay:.8s}.note.n3{bottom:18%;left:10%;color:#ffc75f;animation-delay:1.4s}.note.n4{bottom:23%;right:13%;color:#af7bff;animation-delay:2s}
     .sparkle{position:absolute;width:8px;height:8px;border-radius:50%;background:white;box-shadow:0 0 18px 6px rgba(255,255,255,.75);animation:twinkle 2.6s ease-in-out infinite;z-index:1}.s1{top:30%;left:48%}.s2{top:66%;left:55%;animation-delay:.7s}.s3{top:42%;right:35%;animation-delay:1.2s}.s4{bottom:17%;right:42%;animation-delay:1.8s}
     section{padding:78px 22px}.container{max-width:1080px;margin:auto}.section-title{text-align:center;font-size:clamp(2rem,4vw,3.2rem);color:#c94c78;margin-bottom:16px}.section-text{text-align:center;max-width:760px;margin:0 auto 36px;color:#6d4d48;font-size:1.08rem}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:white;border-radius:26px;padding:26px;box-shadow:0 18px 45px rgba(180,99,111,.12);border:1px solid #ffe0e8}.card h3{color:#c94c78;margin-bottom:8px}.contact{background:#fff0f5;text-align:center}.mail{display:inline-flex;margin-top:12px;background:#d95b82;color:white;padding:14px 24px;border-radius:999px;font-weight:800}footer{text-align:center;padding:28px;color:#84615a;background:#fff8f5}
+
+    .cuento-image{
+      width:100%;
+      max-width:440px;
+      height:auto;
+      border-radius:18px;
+      display:block;
+      margin:0 auto 16px auto;
+    }
+
+    .btn-cuento{
+      display:inline-block;
+      margin-top:14px;
+      padding:12px 22px;
+      background:#d95b82;
+      color:white;
+      border-radius:999px;
+      font-weight:800;
+      box-shadow:0 10px 24px rgba(194,83,117,.16);
+      transition:.25s ease;
+    }
+
+    .btn-cuento:hover{
+      background:#c94c78;
+      transform:translateY(-2px);
+    }
+
+    .song-image{
+      width:100% !important;
+      max-width:440px !important;
+      height:auto !important;
+      object-fit:contain !important;
+      object-position:center !important;
+      border-radius:18px !important;
+      display:block !important;
+      margin:0 auto 15px auto !important;
+    }
+
     @keyframes float{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-18px) rotate(7deg)}}
     @keyframes twinkle{0%,100%{opacity:.15;transform:scale(.7)}50%{opacity:1;transform:scale(1.25)}}
     @media(max-width:850px){.menu{display:none}.hero{padding-top:86px}.hero-wrap{grid-template-columns:1fr;gap:24px}.hero-text{padding:28px;border-radius:26px;text-align:center;order:2}.buttons{justify-content:center}.hero-image-card{order:1;border-width:7px;border-radius:28px;min-height:300px}.hero-image-card img{min-height:300px;max-height:480px}.cards{grid-template-columns:1fr}.note{opacity:.45}}
-.song-image{
-  width:100% !important;
-  max-width:440px !important;
-  height:auto !important;
-  object-fit:contain !important;
-  object-position:center !important;
-  border-radius:18px !important;
-  display:block !important;
-  margin:0 auto 15px auto !important;
-}
   </style>
 </head>
 <body>
@@ -86,9 +114,32 @@
       <h2 class="section-title">Cuentos personalizados</h2>
       <p class="section-text">Historias tiernas para regalar, recordar o acompañar momentos especiales.</p>
       <div class="cards">
-        <article class="card"><h3>Para cumpleaños</h3><p>Un cuento donde el protagonista vive una aventura mágica en su día especial.</p></article>
-        <article class="card"><h3>Para familias</h3><p>Relatos dulces creados a partir de recuerdos, lugares y personas importantes.</p></article>
-        <article class="card"><h3>Para bebés</h3><p>Textos sencillos, suaves y bonitos para leer antes de dormir.</p></article>
+
+        <article class="card">
+          <img src="portada-luna-carmen.png"
+               alt="La Luna que cuidaba de Carmen"
+               class="cuento-image">
+
+          <h3>La Luna que cuidaba de Carmen</h3>
+          <p>Un cuento suave para dormir bajo la luz de la luna.</p>
+
+          <a href="la-luna-que-cuidaba-de-carmen.pdf"
+             target="_blank"
+             class="btn-cuento">
+            Leer cuento
+          </a>
+        </article>
+
+        <article class="card">
+          <h3>Para cumpleaños</h3>
+          <p>Un cuento donde el protagonista vive una aventura mágica en su día especial.</p>
+        </article>
+
+        <article class="card">
+          <h3>Para bebés</h3>
+          <p>Textos sencillos, suaves y bonitos para leer antes de dormir.</p>
+        </article>
+
       </div>
     </div>
   </section>
@@ -100,18 +151,16 @@
       <div class="cards">
         <article class="card"><h3>Canción de bienvenida</h3><p>Una canción especial para celebrar una llegada, un nacimiento o un recuerdo bonito.</p></article>
         <article class="card"><h3>Canción de cumpleaños</h3><p>Una letra alegre y personalizada para hacer único cada cumpleaños.</p></article>
-       	<article class="card">
-					
-			<img src="luna-carmen.png"
-			alt="La Luna Baila con Carmen"
-			class="song-image">
-	
-			<audio controls>
-			<source src="la-luna-baila-con-carmen.mp3" type="audio/mpeg">
-			Tu navegador no soporta audio.
-			</audio>
+        <article class="card">
+          <img src="luna-carmen.png"
+               alt="La Luna Baila con Carmen"
+               class="song-image">
 
-		</article>
+          <audio controls>
+            <source src="la-luna-baila-con-carmen.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio.
+          </audio>
+        </article>
       </div>
     </div>
   </section>
