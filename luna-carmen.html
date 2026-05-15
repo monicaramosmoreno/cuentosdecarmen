@@ -3,179 +3,192 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>La Luna que cuidaba de Carmen</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
-  font-family:Arial, Helvetica, sans-serif;
-  background:#fff8f5;
-  color:#5b3b36;
+  font-family:Georgia, 'Times New Roman', serif;
+  background:#fff6df;
+  color:#5b4a56;
   line-height:1.7;
 }
 
 .story{
-  max-width:850px;
+  max-width:1050px;
   margin:auto;
-  padding:40px 20px 80px;
+  padding:36px 18px 70px;
 }
 
-.page{
-  margin-bottom:90px;
+.cover{
   text-align:center;
+  margin-bottom:55px;
 }
 
-.page img{
+.cover img{
   width:100%;
-  max-width:700px;
-  border-radius:28px;
-  box-shadow:0 18px 40px rgba(0,0,0,.10);
-  margin-bottom:28px;
+  max-width:420px;
+  border-radius:26px;
+  box-shadow:0 18px 40px rgba(77,50,60,.18);
 }
 
 h1{
-  font-size:clamp(2.4rem,5vw,4.5rem);
-  color:#c94c78;
-  margin-bottom:16px;
-  line-height:1.1;
+  font-size:clamp(2.2rem,5vw,4rem);
+  color:#766078;
+  margin:24px 0 8px;
+  line-height:1.05;
 }
 
 .subtitle{
-  font-size:1.1rem;
-  color:#8a6660;
-  margin-bottom:40px;
+  font-size:1.3rem;
+  color:#8b7282;
+  font-weight:bold;
+}
+
+.story-page{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:34px;
+  align-items:center;
+  background:#fffaf0;
+  border:1px solid #f1dfb9;
+  border-radius:32px;
+  padding:28px;
+  margin-bottom:38px;
+  box-shadow:0 18px 45px rgba(100,70,80,.10);
+}
+
+.story-page.reverse .image{
+  order:2;
+}
+
+.image img{
+  width:100%;
+  max-height:430px;
+  object-fit:cover;
+  border-radius:24px;
+  box-shadow:0 12px 28px rgba(77,50,60,.14);
 }
 
 .text{
-  max-width:650px;
-  margin:auto;
-  font-size:1.3rem;
-  color:#5d4641;
+  font-size:clamp(1.35rem,2vw,1.75rem);
+  text-align:center;
+  color:#5f4b58;
+}
+
+.text strong{
+  color:#8b6280;
 }
 
 .final{
-  font-size:1.5rem;
-  color:#c94c78;
+  font-size:clamp(1.5rem,2.3vw,2rem);
   font-weight:bold;
-  margin-top:20px;
+  color:#8b6280;
 }
 
 .back{
-  display:inline-block;
-  margin-top:20px;
+  display:block;
+  width:max-content;
+  margin:45px auto 0;
   padding:14px 24px;
   background:#d95b82;
   color:white;
   border-radius:999px;
   text-decoration:none;
+  font-family:Arial, sans-serif;
   font-weight:bold;
-  transition:.3s;
 }
 
-.back:hover{
-  background:#c94c78;
-}
-
-@media(max-width:768px){
-
-  .story{
-    padding:25px 16px 60px;
+@media(max-width:760px){
+  .story-page,
+  .story-page.reverse{
+    grid-template-columns:1fr;
+    padding:18px;
   }
 
-  .page{
-    margin-bottom:60px;
+  .story-page.reverse .image{
+    order:0;
+  }
+
+  .image img{
+    max-height:none;
   }
 
   .text{
-    font-size:1.12rem;
+    font-size:1.25rem;
   }
-
 }
 </style>
 </head>
 
 <body>
 
-<div class="story">
+<main class="story">
 
-  <section class="page">
-    <img src="portada1.png" alt="Portada cuento Carmen">
-
+  <section class="cover">
+    <img src="portada1.png" alt="Portada del cuento">
     <h1>La Luna que cuidaba de Carmen</h1>
-
-    <p class="subtitle">
-      Para quienes nunca duermen solos
-    </p>
+    <p class="subtitle">Para quienes nunca duermen solos</p>
   </section>
 
-  <section class="page">
-    <img src="cuentopag1.png" alt="Página 1">
-
-    <p class="text">
+  <section class="story-page">
+    <div class="image">
+      <img src="cuentopag1.png" alt="Carmen mirando la luna">
+    </div>
+    <div class="text">
       Cada noche, Carmen miraba la luna desde su ventana.<br><br>
-
-      Grande.<br>
-      Redondita.<br>
-      Brillante.<br><br>
-
+      <strong>Grande. Redondita. Brillante.</strong><br><br>
       Siempre estaba allí.
-    </p>
+    </div>
   </section>
 
-  <section class="page">
-    <img src="cuentopag2.png" alt="Página 2">
-
-    <p class="text">
+  <section class="story-page reverse">
+    <div class="image">
+      <img src="cuentopag2.png" alt="Carmen saludando a la luna">
+    </div>
+    <div class="text">
       —Buenas noches, Luna —susurraba Carmen.<br><br>
-
       Y la luna, desde el cielo, parecía responder:<br><br>
-
       —Buenas noches, pequeña.
-    </p>
+    </div>
   </section>
 
-  <section class="page">
-    <img src="cuentopag3.png" alt="Página 3">
-
-    <p class="text">
+  <section class="story-page">
+    <div class="image">
+      <img src="cuentopag3.png" alt="Carmen abrazando su osito">
+    </div>
+    <div class="text">
       La habitación se llenó de calma.<br><br>
-
       Y Carmen abrazó fuerte a su osito.
-    </p>
+    </div>
   </section>
 
-  <section class="page">
-    <img src="cuentopag4.png" alt="Página 4">
-
-    <p class="text">
+  <section class="story-page reverse">
+    <div class="image">
+      <img src="cuentopag4.png" alt="Carmen dormida">
+    </div>
+    <div class="text">
       Poco a poco,<br>
       Carmen cerró los ojitos.<br><br>
-
       Y la luna siguió brillando<br>
       solo para ella.
-    </p>
+    </div>
   </section>
 
-  <section class="page">
-    <img src="cuentopag5.png" alt="Página final">
-
-    <p class="text final">
+  <section class="story-page">
+    <div class="image">
+      <img src="cuentopag5.png" alt="Final del cuento">
+    </div>
+    <div class="text final">
       Y desde aquella noche,<br>
       Carmen nunca volvió a dormir sola.
-    </p>
-
-    <a href="index.html" class="back">
-      Volver a la web
-    </a>
+    </div>
   </section>
 
-</div>
+  <a href="index.html" class="back">Volver a la web</a>
+
+</main>
 
 </body>
 </html>
