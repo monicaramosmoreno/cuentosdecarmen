@@ -1,236 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<title>Cuentos y Canciones Carmen</title>
-
-<style>
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-body{
-  font-family:Arial, Helvetica, sans-serif;
-  background:#fff8f5;
-  color:#5b3a35;
-  line-height:1.6;
-}
-
-.container{
-  width:90%;
-  max-width:1200px;
-  margin:auto;
-}
-
-.hero{
-  text-align:center;
-  padding:70px 20px 40px;
-}
-
-.hero h1{
-  font-size:3rem;
-  color:#d45087;
-  margin-bottom:20px;
-}
-
-.hero p{
-  max-width:700px;
-  margin:auto;
-  font-size:1.1rem;
-}
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:30px;
-  padding:50px 0 80px;
-}
-
-.card{
-  background:white;
-  border-radius:30px;
-  padding:30px;
-  text-align:center;
-  box-shadow:0 8px 25px rgba(0,0,0,.08);
-  border:1px solid #ffd7e4;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-}
-
-.card img{
-  width:100%;
-  height:460px;
-  object-fit:cover;
-  border-radius:22px;
-  margin-bottom:25px;
-}
-
-.card h3{
-  color:#d45087;
-  font-size:2rem;
-  margin-bottom:18px;
-}
-
-.card p{
-  font-size:1.15rem;
-  margin-bottom:30px;
-}
-
-.btn{
-  display:inline-block;
-  background:#d45087;
-  color:white;
-  padding:16px 32px;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:bold;
-  transition:.3s;
-}
-
-.btn:hover{
-  transform:translateY(-3px);
-  opacity:.9;
-}
-
-/* TARJETA POSTAL */
-
-.postal-card{
-  justify-content:flex-start;
-}
-
-.postal-card .postal-image{
-  width:100%;
-  height:300px;
-  object-fit:cover;
-  object-position:center;
-  display:block;
-  margin:0 0 24px;
-  border-radius:18px;
-  box-shadow:0 12px 28px rgba(0,0,0,.12);
-}
-
-footer{
-  text-align:center;
-  padding:30px;
-  color:#8d6b66;
-}
-
-@media(max-width:768px){
-
-  .hero h1{
-    font-size:2.2rem;
-  }
-
-  .card img{
-    height:380px;
-  }
-
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuentos y Canciones Carmen</title>
+  <meta name="description" content="Cuentos, canciones y postales personalizadas para convertir recuerdos bonitos en detalles únicos.">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<header class="header">
+  <a href="index.html" class="logo">Cuentos y Canciones Carmen</a>
+
+  <nav class="nav">
+    <a href="index.html">Inicio</a>
+    <a href="ideas.html">Ideas</a>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
 <section class="hero">
+  <div class="hero-text">
+    <span class="tag">Recuerdos hechos magia</span>
 
-  <div class="container">
-
-    <h1>
-      Cuentos y Canciones Carmen
-    </h1>
+    <h1>Historias, canciones y postales creadas con alma</h1>
 
     <p>
-      Porque hay recuerdos que merecen ser contados.
-      Creamos cuentos, canciones y postales personalizadas llenas de emoción y magia.
+      Creamos detalles personalizados para bebés, niños y familias:
+      cuentos, canciones y postales llenas de ternura.
     </p>
 
+    <div class="hero-buttons">
+      <a href="ideas.html" class="btn">Ver ideas</a>
+      <a href="mailto:carmenycuentos@gmail.com" class="btn secondary">Contactar</a>
+    </div>
   </div>
 
+  <div class="hero-image">
+    <img src="images/hero-carmen.png" alt="Niña leyendo un cuento mágico">
+  </div>
 </section>
 
-<section class="container">
+<section class="section">
+  <h2>Qué podemos crear</h2>
+  <p class="section-intro">
+    Pequeños regalos emocionales para guardar, compartir o regalar.
+  </p>
 
   <div class="cards">
-
-    <!-- CUENTO -->
+    <article class="card">
+      <img src="images/cuento-carmen.png" alt="Cuento personalizado">
+      <h3>Cuentos personalizados</h3>
+      <p>Historias únicas con nombre, detalles especiales y mucha magia.</p>
+    </article>
 
     <article class="card">
-
-      <img src="cuento-carmen.png"
-           alt="La Luna que cuidaba de Carmen">
-
-      <h3>
-        La Luna que cuidaba de Carmen
-      </h3>
-
-      <p>
-        Un cuento para que tu peque duerma feliz.
-      </p>
-
-      <a href="#" class="btn">
-        Leer cuento
-      </a>
-
+      <img src="images/luna-carmen.png" alt="Canción personalizada">
+      <h3>Canciones personalizadas</h3>
+      <p>Letras dulces para cumpleaños, nanas o recuerdos familiares.</p>
     </article>
-
-    <!-- CANCIÓN -->
 
     <article class="card">
-
-      <img src="luna-carmen.png"
-           alt="La Luna baila con Carmen">
-
-      <h3>
-        La Luna baila con Carmen
-      </h3>
-
-      <p>
-        Una nana personalizada única.
-      </p>
-
-      <a href="#" class="btn">
-        Escuchar canción
-      </a>
-
+      <img src="images/postal-nacimiento-carmen.png" alt="Postal personalizada">
+      <h3>Postales personalizadas</h3>
+      <p>Diseños bonitos con nombre, fecha y frase especial.</p>
     </article>
-
-    <!-- POSTAL -->
-
-    <article class="card postal-card">
-
-      <img src="postal-nacimiento-carmen.png"
-           alt="Postal personalizada de nacimiento"
-           class="postal-image">
-
-      <h3>
-        Postal personalizada
-      </h3>
-
-      <p>
-        Diseñamos una postal única con nombre, fecha y una frase especial.
-        Ideal para nacimientos, cumpleaños o recuerdos bonitos.
-      </p>
-
-      <a href="mailto:carmenycuentos@gmail.com?subject=Quiero una postal personalizada"
-         class="btn">
-        Pedir postal
-      </a>
-
-    </article>
-
   </div>
+</section>
 
+<section id="sobre-mi" class="about">
+  <div>
+    <h2>Sobre este rincón</h2>
+    <p>
+      Cuentos y Canciones Carmen nace para transformar momentos bonitos
+      en recuerdos que se puedan leer, escuchar y guardar.
+    </p>
+    <p>
+      Cada creación se piensa con cariño, cuidando los detalles, las palabras
+      y la emoción de cada historia.
+    </p>
+  </div>
+</section>
+
+<section id="contacto" class="contact">
+  <h2>¿Quieres una idea personalizada?</h2>
+  <p>
+    Escríbeme y cuéntame qué te gustaría crear.
+  </p>
+
+  <a href="mailto:carmenycuentos@gmail.com?subject=Quiero una creación personalizada" class="btn">
+    Enviar mail
+  </a>
 </section>
 
 <footer>
-  © 2026 · Cuentos y Canciones Carmen
+  <p>© 2026 · Cuentos y Canciones Carmen</p>
 </footer>
 
 </body>
